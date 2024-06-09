@@ -1,45 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Exercise #5: Input check for minimmum number of charecter should be 6 and password match in both input </title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Exercise #5: Input check for minimmum number of charecter should be 6 and
+      password match in both input
+    </title>
     <style>
-        * {
-            font-family: Arial, sans-serif;
-        }
+      * {
+        font-family: Arial, sans-serif;
+      }
 
-        .err {
-            color: red;
-            font-size: 0.7em;
-        }
+      .err {
+        color: red;
+        font-size: 0.7em;
+      }
     </style>
     <script>
-        /* TODO complete this part */
+      /* TODO complete this part */
     </script>
-</head>
-<body>
-
-<form name="pw">
-    <table>
+  </head>
+  <body>
+    <form name="pw">
+      <table>
         <tr>
-            <td>Password (min 6 characters):</td>
-            <td><input type="password" name="password1" id="password1" size="10" placeholder="Password"></td>
-            <td>
-                <div id="pw1_check" class="err"></div>
-            </td>
+          <td>Password (min 6 characters):</td>
+          <td>
+            <input
+              type="password"
+              name="password1"
+              id="password1"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw1_check" class="err"></div>
+          </td>
         </tr>
         <tr>
-            <td>Repeat password:</td>
-            <td><input type="password" name="password2" id="password2" size="10" placeholder="Password"></td>
-            <td>
-                <div id="pw2_check" class="err"></div>
-            </td>
+          <td>Repeat password:</td>
+          <td>
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw2_check" class="err"></div>
+          </td>
         </tr>
-    </table>
+      </table>
 
-    <input type="submit" value="Submit" id="submitBtn"/>
-</form>
+      <input type="submit" value="Submit" id="submitBtn" />
+    </form>
 
-</body>
+    <script>
+      form = document.forms["pw"];
+      pass1 = document.forms["pw"]["password1"];
+      pass2 = document.forms["pw"]["password2"];
+      check1 = document.getElementById("pw1_check");
+      check2 = document.getElementById("pw2_check");
+      form.onsubmit = function () {
+        alert("Submitted");
+        alert(pass1.value);
+        alert(pass2.value);
+        if (pass1.value.length < 6) {
+          check1.innerHTML = "Password must be at least 6 characters long.";
+          return false;
+        }
+        if (pass1.value != pass2.value) {
+          check2.innerHTML = "Passwords do not match.";
+          return false;
+        }
+      };
+    </script>
+  </body>
 </html>
-

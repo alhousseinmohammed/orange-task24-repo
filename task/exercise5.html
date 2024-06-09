@@ -110,8 +110,22 @@
       var text2 = document.getElementById("p2_text");
       var text3 = document.getElementById("p3_text");
       text1.lastElementChild.onclick = () => {
-        // this.parentElement.style.background = "red";
-        console.log(this.parentElement);
+        text1.style.display = "none";
+      };
+      document.getElementById("p1_show").onclick = () => {
+        text1.style.display = "block";
+      };
+      text2.lastElementChild.onclick = () => {
+        text2.style.display = "none";
+      };
+      document.getElementById("p2_show").onclick = () => {
+        text2.style.display = "block";
+      };
+      text3.lastElementChild.onclick = () => {
+        text3.style.display = "none";
+      };
+      document.getElementById("p3_show").onclick = () => {
+        text3.style.display = "block";
       };
     </script>
   </body>
